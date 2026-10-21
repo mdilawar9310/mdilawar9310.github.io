@@ -97,8 +97,33 @@
         "aria-label": "Get " + app.name + " on Google Play"
       }, [el("img", { src: "assets/img/google-play-badge.png", width: "150", height: "58", alt: "Get it on Google Play", loading: "lazy" })])
     ]));
+    tintFromIcon(card.querySelector(".app-icon"), card);
     grid.appendChild(card);
   });
+
+  // Give each card its own colour, taken from the most vivid pixels of its icon.
+  function tintFromIcon(img, card) {
+    function apply() {
+      try {
+        var size = 24, c = document.createElement("canvas");
+        c.width = c.height = size;
+        var ctx = c.getContext("2d");
+        ctx.drawImage(img, 0, 0, size, size);
+        var d = ctx.getImageData(0, 0, size, size).data, r = 0, g = 0, b = 0, total = 0;
+        for (var i = 0; i < d.length; i += 4) {
+          var max = Math.max(d[i], d[i + 1], d[i + 2]), min = Math.min(d[i], d[i + 1], d[i + 2]);
+          if (d[i + 3] < 128 || max < 50) continue;
+          var weight = Math.pow(max - min, 2) + 1;
+          r += d[i] * weight; g += d[i + 1] * weight; b += d[i + 2] * weight; total += weight;
+        }
+        if (total > size * 4) {
+          card.style.setProperty("--app-color", "rgb(" + Math.round(r / total) + "," + Math.round(g / total) + "," + Math.round(b / total) + ")");
+        }
+      } catch (e) {}
+    }
+    if (img.complete && img.naturalWidth) apply();
+    else img.addEventListener("load", apply);
+  }
 
   // ---- Filters ----
   var filters = document.querySelectorAll(".filter");
