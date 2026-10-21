@@ -76,18 +76,27 @@
       })]);
       shots.push(btn);
     }
-    var card = el("article", { "class": "app-card reveal", "data-type": app.type }, [
+    var labels = [el("span", { "class": "tag", text: app.tag })];
+    if (app.stat) labels.unshift(el("span", { "class": "stat-badge", text: app.stat }));
+    var body = [
       el("div", { "class": "app-top" }, [
         el("img", { "class": "app-icon", src: base + "icon.webp", width: "64", height: "64", loading: "lazy", alt: app.name + " app icon" }),
-        el("div", {}, [el("h3", { text: app.name }), el("span", { "class": "tag", text: app.tag })])
+        el("div", {}, [el("h3", { text: app.name }), el("div", { "class": "app-labels" }, labels)])
       ]),
-      el("p", { "class": "app-desc", text: app.description }),
-      el("div", { "class": "app-shots" }, shots),
+      el("p", { "class": "app-desc", text: app.description })
+    ];
+    if (app.meta) body.push(el("p", { "class": "app-meta", text: app.meta }));
+    if (app.tags) {
+      body.push(el("ul", { "class": "app-tags", "aria-label": "Tags" },
+        app.tags.map(function (t) { return el("li", { text: t }); })));
+    }
+    body.push(el("div", { "class": "app-shots" }, shots));
+    var card = el("article", { "class": "app-card reveal" + (app.featured ? " is-featured" : ""), "data-type": app.type }, body.concat([
       el("a", {
         "class": "play-link", href: PLAY_URL + app.package, target: "_blank", rel: "noopener",
         "aria-label": "Get " + app.name + " on Google Play"
       }, [el("img", { src: "assets/img/google-play-badge.png", width: "150", height: "58", alt: "Get it on Google Play", loading: "lazy" })])
-    ]);
+    ]));
     grid.appendChild(card);
   });
 

@@ -18,6 +18,9 @@ Plain HTML, CSS and JavaScript. No build step, no trackers.
    - `tag`: a short label, e.g. `"Puzzle game"` or `"Utility"`
    - `description`: one line
    - `shots`: how many screenshots you added
+   - Optional: `featured: true` (accent border), `stat: "1K+ Downloads"` (highlighted pill),
+     `meta: "Android · Google Play"` (small line), `tags: ["Android", "Game"]` (chips).
+     Only add a `stat` you can see on the real Play listing.
 4. If the number of live apps changed, update the "apps and games live on Google Play" count in `index.html`.
 5. Commit and push. GitHub Pages updates in about a minute.
 

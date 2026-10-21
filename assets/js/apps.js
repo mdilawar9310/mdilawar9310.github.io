@@ -2,8 +2,23 @@
   App list for the "Apps & Games" section.
   To add an app: put icon.webp + shot-1..3.webp in assets/apps/<slug>/ and add an entry below.
   type: "game" or "tool" (controls the filter). shots: how many shot-N.webp files exist.
+  Optional: featured (accent border), stat (highlighted pill, e.g. "1K+ Downloads"),
+  meta (small line under the description), tags (list of small chips).
 */
 window.APPS = [
+  {
+    slug: "bubblora",
+    name: "Bubblora — Bubble Shooter",
+    package: "com.dilawarzaman.bubblora",
+    type: "game",
+    tag: "Casual / Puzzle game",
+    featured: true,
+    stat: "1K+ Downloads",
+    description: "A colorful bubble shooter with a level map (worlds like \"Cloud Garden\"), star ratings per level, score targets, limited shots, special bubbles, and sound settings. Built for Android and live on Google Play.",
+    meta: "Android · Google Play · Rated Everyone (3+)",
+    tags: ["Android", "Game", "Bubble Shooter", "Google Play", "Published"],
+    shots: 3
+  },
   {
     slug: "prism-harbor",
     name: "Prism Harbor",
