@@ -317,6 +317,27 @@ p { margin: 0; }
 .contact-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 30px; }
 .contact-actions .btn { overflow-wrap: anywhere; }
 
+/* FAQ */
+.faq-list { display: grid; gap: 12px; max-width: 860px; }
+.faq-item {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+  transition: border-color .25s ease;
+}
+.faq-item[open], .faq-item:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--border)); }
+.faq-item summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 20px 24px; cursor: pointer; list-style: none;
+  font-weight: 700; font-size: 1.05rem; border-radius: var(--radius);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+"; flex: none; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%;
+  background: var(--accent-soft); color: var(--accent); font-size: 1.3rem; font-weight: 600; line-height: 1;
+  transition: transform .25s ease;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { padding: 0 24px 22px; color: var(--text-soft); }
+
 /* Footer */
 .site-footer { border-top: 1px solid var(--border); padding-block: 28px; color: var(--text-soft); font-size: .93rem; }
 .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
