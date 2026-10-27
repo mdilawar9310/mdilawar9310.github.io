@@ -20,6 +20,24 @@ window.APPS = [
     shots: 3
   },
   {
+    slug: "tilt-maze",
+    name: "Tilt Maze: Roll the Ball",
+    package: "com.dilawarzaman.tiltmaze",
+    type: "game",
+    tag: "Puzzle game",
+    description: "Tilt to roll a steel ball through 120 maze levels in 6 worlds. Offline, no ads.",
+    shots: 3
+  },
+  {
+    slug: "rolling-ball-runner",
+    name: "Rolling Ball Runner",
+    package: "com.dilawarzaman.rollingballrunner",
+    type: "game",
+    tag: "Runner game",
+    description: "Roll, dodge and collect coins on a sunny flower road. Fully offline, no ads.",
+    shots: 3
+  },
+  {
     slug: "prism-harbor",
     name: "Prism Harbor",
     package: "com.dilawar.prismharbor",
