@@ -117,5 +117,14 @@ window.APPS = [
     tag: "Utility",
     description: "Private document scanner. PDF, text and signatures, fully offline on your phone.",
     shots: 3
+  },
+  {
+    slug: "scanmate",
+    name: "ScanMate",
+    package: "com.scanmate.ai",
+    type: "tool",
+    tag: "Utility",
+    description: "Offline document scanner with edge detection, filters and multi-page documents. No ads.",
+    shots: 3
   }
 ];
