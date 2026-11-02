@@ -13,7 +13,7 @@ window.APPS = [
     type: "game",
     tag: "Casual / Puzzle game",
     featured: true,
-    stat: "1K+ Downloads",
+    stat: "5K+ Downloads",
     description: "A colorful bubble shooter with a level map (worlds like \"Cloud Garden\"), star ratings per level, score targets, limited shots, special bubbles, and sound settings. Built for Android and live on Google Play.",
     meta: "Android · Google Play · Rated Everyone (3+)",
     tags: ["Android", "Game", "Bubble Shooter", "Google Play", "Published"],
@@ -71,15 +71,6 @@ window.APPS = [
     type: "game",
     tag: "Puzzle game",
     description: "Unscrew colourful bolts, sort them into toolboxes and clear 150 workshop benches.",
-    shots: 3
-  },
-  {
-    slug: "gravity-flip-bubbles",
-    name: "Gravity Flip Bubbles",
-    package: "com.dilawarzaman.gravityflipbubbles",
-    type: "game",
-    tag: "Bubble shooter",
-    description: "Bubble shooter with a twist: every few shots the whole board flips 90°.",
     shots: 3
   },
   {
